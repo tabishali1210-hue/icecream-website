@@ -1,0 +1,66 @@
+{% extends "index.html" %}
+{% load static %}
+
+{% block title %}
+About Us
+{% endblock title %}
+
+{% block body %}
+<section style="padding: 60px 20px; background-color: #fff;">
+    <div style="max-width: 1200px; margin: auto; text-align: center;">
+        <h1 style="font-size: 36px; color: #333; margin-bottom: 20px;">About Us</h1>
+        <p style="font-size: 18px; color: #555; line-height: 1.6;">
+            Welcome to Funkid Icecream! We are passionate about delivering the sweetest experience with our handcrafted ice creams. Our mission is to bring joy to every scoop.
+        </p>
+    </div>
+</section>
+
+<!-- Our Team Section -->
+<section style="padding: 60px 20px; background-color: #f4f4f4;">
+    <div style="max-width: 1200px; margin: auto; text-align: center;">
+        <h2 style="font-size: 28px; color: #333; margin-bottom: 40px;">Meet Our Team</h2>
+        <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 30px;">
+
+            <!-- Team Member 1 -->
+            <div style="width: 200px; text-align: center; transition: transform 0.3s;">
+                <img src="/static/pic/prof.png" alt="John Doe" style="width: 100%; border-radius: 50%; box-shadow: 0 4px 10px rgba(0,0,0,0.3);">
+                <h3 style="margin: 10px 0 5px 0; color: #333;">John Doe</h3>
+                <p style="color: #777; font-size: 14px;">Founder & CEO</p>
+            </div>
+
+            <!-- Team Member 2 -->
+            <div style="width: 200px; text-align: center; transition: transform 0.3s;">
+                <img src="/static/pic/prof.png" alt="Jane Smith" style="width: 100%; border-radius: 50%; box-shadow: 0 4px 10px rgba(0,0,0,0.3);">
+                <h3 style="margin: 10px 0 5px 0; color: #333;">Jane Smith</h3>
+                <p style="color: #777; font-size: 14px;">Head of Production</p>
+            </div>
+
+            <!-- Team Member 3 -->
+            <div style="width: 200px; text-align: center; transition: transform 0.3s;">
+                <img src="/static/pic/prof.png" alt="Mike Lee" style="width: 100%; border-radius: 50%; box-shadow: 0 4px 10px rgba(0,0,0,0.3);">
+                <h3 style="margin: 10px 0 5px 0; color: #333;">Mike Lee</h3>
+                <p style="color: #777; font-size: 14px;">Creative Director</p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- CSS Hover Effect -->
+<style>
+    @media(max-width: 768px){
+        section div[style*="display: flex"] {
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+
+    div[style*="width: 200px"] {
+        cursor: pointer;
+    }
+
+    div[style*="width: 200px"]:hover {
+        transform: translateY(-10px);
+    }
+</style>
+{% endblock body %}

@@ -1,0 +1,156 @@
+{% extends "index.html" %}
+{% block title %}
+Contact Us
+{% endblock title %}
+
+{% block body %}
+<div class="titl">
+    <h1>Contact Us</h1>
+</div>
+
+<div class="forms">
+    <form method="post">
+        {% csrf_token %}
+        <div class="form-group">
+            <input type="text" class="floating-input" placeholder=" " id="name" name="name" required>
+            <label for="name">Name</label>
+        </div>
+
+        <div class="form-group">
+            <input type="email" class="floating-input" placeholder=" " id="email" name="email" required>
+            <label for="email">Email</label>
+        </div>
+
+        <div class="form-group">
+            <input type="text" class="floating-input" placeholder=" " id="phone" name="phone">
+            <label for="phone">Phone Number</label>
+        </div>
+
+        <div class="form-group">
+            <textarea id="desc" name="desc" rows="4" placeholder="Your message here..."></textarea>
+        </div>
+
+        <input type="submit" value="Submit">
+    </form>
+</div>
+
+<style>
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f7f7f7;
+    margin: 0;
+    padding: 0;
+}
+
+.titl{
+    text-align: center;
+    margin-top: 20px;
+    text-decoration: underline;
+}
+
+.forms{
+    margin: auto;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+form {
+    width: 100%;
+    max-width: 450px; /* Flexible max-width for desktop */
+}
+
+.form-group{
+    position: relative;
+    margin-bottom: 25px;
+}
+
+/* Floating label */
+.form-group label{
+    position: absolute;
+    top: 12px;
+    left: 10px;
+    font-size: 16px;
+    color: #777;
+    pointer-events: none;
+    transition: 0.3s ease;
+}
+
+/* Input style */
+.floating-input{
+    width: 100%; /* Responsive width */
+    padding: 14px 10px 8px 10px;
+    font-size: 16px;
+    border: 2px solid #ccc;
+    border-radius: 6px;
+    outline: none;
+    transition: 0.3s ease;
+    background: transparent;
+}
+
+/* Focus effect */
+.floating-input:focus{
+    border-color: #4285f4;
+    box-shadow: 0 0 4px rgba(66,133,244,0.6);
+}
+
+/* Label moves up when input active or filled */
+.floating-input:focus + label,
+.floating-input:not(:placeholder-shown) + label{
+    top: -10px;
+    left: 8px;
+    font-size: 13px;
+    color: #4285f4;
+    background: #f7f7f7;
+    padding: 0 5px;
+}
+
+/* Textarea style */
+textarea{
+    width: 100%; /* Responsive width */
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid #ccc;
+    border-radius: 6px;
+    outline: none;
+    transition: 0.3s;
+}
+
+textarea:focus{
+    border-color: #4285f4;
+    box-shadow: 0 0 4px rgba(66,133,244,0.6);
+}
+
+input[type=submit]{
+    margin-top: 10px;
+    width: 100%;
+    padding: 10px;
+    background: #4285f4;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+input[type=submit]:hover{
+    background: #2c6de0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    .forms {
+        padding: 10px;
+    }
+    .floating-input, textarea {
+        font-size: 14px;
+        padding: 12px 8px;
+    }
+    input[type=submit] {
+        font-size: 14px;
+        padding: 8px;
+    }
+}
+</style>
+{% endblock body %}

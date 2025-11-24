@@ -1,0 +1,152 @@
+{% extends "index.html" %}
+{% block title %}
+Menu
+{% endblock title %}
+{% block body %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ice Cream Menu</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    margin: 0; /* body me padding hata di */
+  }
+
+  h1 {
+    text-align: center;
+    color: #333;
+    margin: 20px 0;
+  }
+
+  /* Padding sirf menu container ko */
+  .menu-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    padding: 20px; /* yahan cards ke around padding */
+  }
+
+  .menu-card {
+    position: relative;
+    width: 180px;
+    height: 220px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+  }
+
+  .menu-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+  }
+
+  .menu-info {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background: rgba(0,0,0,0.6);
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+    transition: bottom 0.3s;
+  }
+
+  .menu-card:hover .menu-info {
+    bottom: 10px;
+  }
+
+  .menu-info h2 {
+    margin: 0 0 5px 0;
+    font-size: 16px;
+  }
+
+  .menu-info p {
+    margin: 0;
+    font-size: 12px;
+  }
+
+  @media (max-width: 768px) {
+    .menu-container {
+      flex-direction: column;
+      align-items: center;
+    }
+    .menu-card {
+      width: 80%;
+      height: 200px;
+    }
+  }
+</style>
+</head>
+<body>
+
+<!-- Navbar example -->
+<nav style="background-color:#333;color:#fff;padding:15px;text-align:center;">
+               JINGLE ICECREAM <br>
+               MENU
+</nav>
+
+<h1>Cons</h1>
+
+<div class="menu-container">
+  <div class="menu-card" style="background-image: url('images/icecream1.jpg');" onclick="showAlert('Chocolate Ice Cream')">
+    <div class="menu-info">
+      <h2>Chocolate Ice Cream</h2>
+      <p>Rich and creamy chocolate</p>
+    </div>
+  </div>
+
+  <div class="menu-card" style="background-image: url('images/icecream2.jpg');" onclick="showAlert('Strawberry Ice Cream')">
+    <div class="menu-info">
+      <h2>Strawberry Ice Cream</h2>
+      <p>Fresh strawberry taste</p>
+    </div>
+  </div>
+
+  <div class="menu-card" style="background-image: url('images/icecream3.jpg');" onclick="showAlert('Vanilla Mini Scoop')">
+    <div class="menu-info">
+      <h2>Vanilla Mini Scoop</h2>
+      <p>Classic vanilla, only $2</p>
+    </div>
+  </div>
+
+  <div class="menu-card" style="background-image: url('images/icecream4.jpg');" onclick="showAlert('Mango Delight')">
+    <div class="menu-info">
+      <h2>Mango Delight</h2>
+      <p>Sweet mango flavor</p>
+    </div>
+  </div>
+
+  <div class="menu-card" style="background-image: url('images/icecream5.jpg');" onclick="showAlert('Mint Chocolate')">
+    <div class="menu-info">
+      <h2>Mint Chocolate</h2>
+      <p>Refreshing mint taste</p>
+    </div>
+  </div>
+
+  <div class="menu-card" style="background-image: url('images/icecream6.jpg');" onclick="showAlert('Cookies & Cream')">
+    <div class="menu-info">
+      <h2>Cookies & Cream</h2>
+      <p>Crunchy and creamy</p>
+    </div>
+  </div>
+</div>
+
+<script>
+  function showAlert(name) {
+    alert("You clicked on " + name + "!");
+  }
+</script>
+
+</body>
+</html>
+
+{% endblock body %}
